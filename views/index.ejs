@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')  %> 
+
+  <body>
+    
+    <%- include('../partials/nav.ejs')  %> 
+    <div class="container">
+
+      <!-- <% const name = "eggys" %>  -->
+      <h2>Welcome to my ejs Home page</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta modi
+        officiis reiciendis, officia odio beatae labore quibusdam consectetur
+        atque deserunt!
+      </p>
+      <% if(Blogs.length) { %> 
+        <% Blogs.map((blog)=>{ %>
+          
+          <a href="/blogs/<%- blog._id %> "> 
+            <h2><%= blog.title %></h2>
+            <h1><%= blog.name %></h1> 
+
+          </a>
+  
+      <% }) %> 
+      <% } else { %> 
+      <h2>No blogs today</h2>
+      <% } %>
+    </div>
+    <%- include('../partials/footer.ejs') %> 
+  </body>
+
+</html>
